@@ -1,12 +1,20 @@
-this is the write-up for the tryhackme challenge: https://tryhackme.com/room/corridor
+# TryHackMe: Corridor Write-up
 
-on visiting the machine ip, we will be redirected to a page which has a picture of a corridor and several doors.
-you may notice that each door has a url which leads to an empty room.
+[![Corridor Challenge](https://tryhackme.com/room/corridor)](https://tryhackme.com/room/corridor)
 
-thing to notice here is the url, since the challenge description told us about idor and hinting about hashes.
+## Initial Observation
 
-if you see all the urls on the door and observe:
+Upon visiting the machine's IP address, you are redirected to a page featuring a picture of a corridor with several doors. Each door links to a URL leading to an empty room.
 
+## Key Insight
+
+Pay attention to the URLs, as the challenge description mentions IDOR (Insecure Direct Object Reference) and hints at hashes.
+
+## Hash Analysis
+
+Observe the URLs on the doors:
+
+```
 c4ca4238a0b923820dcc509a6f75849b
 c81e728d9d4c2f636f067f89cc14862c
 eccbc87e4b5ce2fe28308fd9f2a7baf3
@@ -22,17 +30,27 @@ c20ad4d76fe97759aa27a0c99bff6710
 d3d9446802a44259755d38e6d163e820
 45c48cce2e2d7fbdea1afc51c7c6ad26
 c9f0f895fb98ab9159f51fd0297e236d
+```
 
-these are md5 hashes
+These are **MD5 hashes**, specifically:
 
-particularly 
-md5(1) -> c4ca4238a0b923820dcc509a6f75849b
-md5(2) -> c81e728d9d4c2f636f067f89cc14862c
+- `md5(\"1\")` → `c4ca4238a0b923820dcc509a6f75849b`
+- `md5(\"2\")` → `c81e728d9d4c2f636f067f89cc14862c`
+- ...and so on up to `md5(\"9\")`.
 
-and so on. 
+Notice the missing `md5(\"0\")`?
 
-so most likely the hidden door must be 0?
+## Solution
 
-compute its md5 hash which is: cfcd208495d565ef66e7dff9f98764da
+The hidden door is likely **0**. Compute its MD5 hash:
 
-visit the page and you have the flag!!
+```
+md5(\"0\") = cfcd208495d565ef66e7dff9f98764da
+```
+
+Visit `/cfcd208495d565ef66e7dff9f98764da` and **you have the flag!!**
+
+---
+
+*Write-up complete. Enjoy hacking!*"
+
