@@ -2,7 +2,7 @@
 
 link: https://tryhackme.com/room/corridor
 
-<img width="890" height="406" alt="corridor" src="corridor/corridor.png" />
+<img width="890" height="406" alt="corridor" src="https://github.com/viitheone/writeups/raw/main/corridor/corridor.png" />
 
 
 ## Initial Observation
