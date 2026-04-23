@@ -1,6 +1,9 @@
 # TryHackMe: Corridor Write-up
 
-[![Corridor Challenge](https://tryhackme.com/room/corridor)](https://tryhackme.com/room/corridor)
+link: https://tryhackme.com/room/corridor
+
+<img width="890" height="406" alt="corridor" src="https://github.com/user-attachments/assets/ed784d3c-c624-4aea-83fd-df57358a2c88" />
+
 
 ## Initial Observation
 
