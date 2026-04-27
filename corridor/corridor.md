@@ -2,7 +2,7 @@
 
 link: https://tryhackme.com/room/corridor
 
-<img width="890" height="406" alt="corridor" src="https://github.com/user-attachments/assets/ed784d3c-c624-4aea-83fd-df57358a2c88" />
+<img width="890" height="406" alt="corridor" src="https://github.com/viitheone/writeups/raw/main/corridor/corridor.png" />
 
 
 ## Initial Observation
@@ -24,9 +24,7 @@ eccbc87e4b5ce2fe28308fd9f2a7baf3
 a87ff679a2f3e71d9181a67b7542122c
 e4da3b7fbbce2345d7772b0674a318d5
 1679091c5a880faf6fb5e6087eb1b2dc
-
 8f14e45fceea167a5a36dedd4bea2543
-
 c51ce410c124a10e0db5e4b97fc2af39
 c20ad4d76fe97759aa27a0c99bff6710
 6512bd43d9caa6e02c990b0a82652dca
@@ -37,23 +35,21 @@ c9f0f895fb98ab9159f51fd0297e236d
 
 These are **MD5 hashes**, specifically:
 
-- `md5(\"1\")` → `c4ca4238a0b923820dcc509a6f75849b`
-- `md5(\"2\")` → `c81e728d9d4c2f636f067f89cc14862c`
-- ...and so on up to `md5(\"9\")`.
+- `md5(1)` → `c4ca4238a0b923820dcc509a6f75849b`
+- `md5(2)` → `c81e728d9d4c2f636f067f89cc14862c`
+- ...and so on up to `md5(13)`.
 
-Notice the missing `md5(\"0\")`?
+Notice the missing `md5(0)`?
 
 ## Solution
 
 The hidden door is likely **0**. Compute its MD5 hash:
 
 ```
-md5(\"0\") = cfcd208495d565ef66e7dff9f98764da
+md5(0) = cfcd208495d565ef66e7dff9f98764da
 ```
 
 Visit `/cfcd208495d565ef66e7dff9f98764da` and **you have the flag!!**
 
 ---
-
-*Write-up complete. Enjoy hacking!*"
 
